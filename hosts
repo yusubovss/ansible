@@ -1,5 +1,9 @@
+[servers:children]
+web
+app
+
 [web]
-158.160.46.184 ansible_connection=ssh ansible_user=yusubovss
+vmlaba ansible_host=158.160.46.184 ansible_connection=ssh ansible_user=yusubovss
 
 [app]
-62.84.125.96 ansible_connection=ssh ansible_user=yusubovss
+jumper ansible_host=62.84.125.96 ansible_connection=ssh ansible_user=yusubovss
