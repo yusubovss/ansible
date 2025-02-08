@@ -1,0 +1,2 @@
+[test]
+158.160.46.184 ansible_connection=ssh ansible_user=yusubovss
