@@ -1,2 +1,5 @@
-[test]
+[web]
 158.160.46.184 ansible_connection=ssh ansible_user=yusubovss
+
+[app]
+62.84.125.96 ansible_connection=ssh ansible_user=yusubovss
