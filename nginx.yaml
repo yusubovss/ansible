@@ -1,4 +1,8 @@
 - hosts: all
+  gather_facts: no
+  vars:
+    root_dir: /usr/share/nginx/html
+    nginx_port: 80
 
   tasks:
   - name: install nginx
@@ -9,15 +13,15 @@
       update_cache: yes
     become: yes
 
-  - name:
+  - name: update nginx index.html
     ansible.builtin.copy:
       src: files/index.html
-      dest: /usr/share/nginx/html/index.html 
+      dest: "{{root_dir}}/index.html"
     become: yes
 
-  - name: Copy nginx config
-    ansible.builtin.copy:
-      src: files/nginx.conf
+  - name: update nginx config
+    ansible.builtin.template:
+      src: templates/nginx.conf.j2
       dest: /etc/nginx/nginx.conf
     notify: restart nginx
     become: yes

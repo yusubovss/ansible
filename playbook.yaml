@@ -16,7 +16,7 @@
     become: yes
     tags: make
 
-  - name: install n
+  - name: install nodejs
     apt:
       name: nodejs
       state: present
