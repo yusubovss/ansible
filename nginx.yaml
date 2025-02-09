@@ -14,8 +14,8 @@
     become: yes
 
   - name: Update nginx index.html
-    ansible.builtin.copy:
-      src: files/index.html
+    ansible.builtin.template:
+      src: templates/index.html.j2
       dest: "{{root_dir}}/index.html"
     become: yes
 
