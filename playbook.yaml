@@ -3,21 +3,24 @@
   tasks:
   - name: install git
     apt:
+      name: git
       state: present
       update_cache: yes
     become: yes
 
   - name: install make
     apt:
+      name: make
       state: present
       update_cache: yes
     become: yes
     tags: make
 
-  - name: install js 
+  - name: install n
     apt:
+      name: nodejs
       state: present
-      update_cache: yes
+      update_cache: yesodejs
     become: yes
     tags: nodejs
 
