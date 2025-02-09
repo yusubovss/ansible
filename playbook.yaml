@@ -22,14 +22,14 @@
     tags: nodejs
 
   - name: Create users arya, sansa, tirion
-    ansible.builtin.user: 
+    user: 
       name: '{{ item.name }}'
       state: present
-      loop: 
+      create_home: yes
+    loop: 
       - { name: arya }
       - { name: sansa }
       - { name: tirion }
-      create_home: yes
-      become: yes
-      tags: users
+    become: yes
+    tags: users
       
