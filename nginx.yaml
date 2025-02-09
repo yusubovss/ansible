@@ -5,7 +5,7 @@
     nginx_port: 80
 
   tasks:
-  - name: install nginx
+  - name: Install nginx
     ansible.builtin.apt:
       name:
         - nginx
@@ -13,13 +13,13 @@
       update_cache: yes
     become: yes
 
-  - name: update nginx index.html
+  - name: Update nginx index.html
     ansible.builtin.copy:
       src: files/index.html
       dest: "{{root_dir}}/index.html"
     become: yes
 
-  - name: update nginx config
+  - name: Update nginx config
     ansible.builtin.template:
       src: templates/nginx.conf.j2
       dest: /etc/nginx/nginx.conf
@@ -27,7 +27,7 @@
     become: yes
 
   handlers:
-  - name: restart nginx
+  - name: Restart nginx
     ansible.builtin.service:
       name: nginx
       state: reloaded
